@@ -7,6 +7,9 @@ jobs:
   push:
     name: "yolks:build_${{ matrix.tag }}"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     strategy:
       fail-fast: false
       matrix:
@@ -24,6 +27,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          logout: false
       - uses: docker/build-push-action@v5
         with:
           context: ./
