@@ -1,8 +1,8 @@
-name: build nodejs
+name: build dockerfile
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   push:
     name: "yolks:build_${{ matrix.tag }}"
