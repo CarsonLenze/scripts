@@ -31,8 +31,9 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           context: ./pocketmine
-          file: ./pocketmine/${{ matrix.tag }}/Dockerfile
+          file: ./pocketmine/Dockerfile
           platforms: linux/amd64
           push: true
+          build-args: PMMP_Version=${{ matrix.tag }}
           tags: |
             ghcr.io/carsonlenze/eggs:pocketmine_v${{ matrix.tag }}
