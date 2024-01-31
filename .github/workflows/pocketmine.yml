@@ -30,9 +30,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: set lower case owner name
         run: |
-          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
-        env:
-          OWNER: '${{ github.repository_owner }}'
+          echo "OWNER_LC=${{ github.repository_owner | lower }}" >>${GITHUB_ENV}
       - uses: docker/build-push-action@v5
         with:
           context: ./pocketmine
@@ -40,4 +38,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ OWNER_LC }}/eggs:pocketmine_v${{ matrix.tag }}
+            ghcr.io/${{ env.OWNER_LC }}/eggs:pocketmine_v${{ matrix.tag }}
