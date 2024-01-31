@@ -35,4 +35,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/eggs:pocketmine_v${{ matrix.tag }}
+            ghcr.io/${{ github.repository_owner | lower }}/eggs:pocketmine_v${{ matrix.tag }}
