@@ -28,4 +28,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the hello-docker Docker image
-        run: docker push ghcr.io/carsonlenze/yolks:build_${{ matrix.tag }}
+        run: |
+          docker tag ghcr.io/carsonlenze/yolks:build_${{ matrix.tag }}
+          docker push ghcr.io/carsonlenze/yolks:build_${{ matrix.tag }}
