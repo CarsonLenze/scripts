@@ -6,4 +6,14 @@ RUN mkdir /build
 WORKDIR /build
 RUN curl https://raw.githubusercontent.com/pmmp/php-build-scripts/master/compile.sh -o ./compile.sh
 
-RUN ln -s /build/compile.sh /usr/bin/php
+RUN ln -s /build/compile.sh /usr/bin/compile.sh
+
+RUN adduser -D -h /home/container container
+USER container
+ENV  USER=container HOME=/home/container
+
+WORKDIR /home/container
+
+COPY ./entrypoint.sh /entrypoint.sh
+
+CMD ["/bin/bash", "/entrypoint.sh"]
