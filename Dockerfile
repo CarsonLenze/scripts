@@ -6,9 +6,9 @@ RUN mkdir /build
 WORKDIR /build
 RUN curl https://raw.githubusercontent.com/pmmp/php-build-scripts/master/compile.sh -o ./compile.sh
 
-RUN chmod +x ./compile.sh
-RUN ./compile.sh -P5
-RUN ln -s ./bin/php7/bin/php /usr/local/bin/php
+RUN chmod +x /build/compile.sh
+RUN /build/compile.sh -P5
+RUN ln -s /build/bin/php7/bin/php /usr/bin/php
 
 
 RUN adduser -D -h /home/container container
