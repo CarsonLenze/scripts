@@ -12,7 +12,7 @@ RUN curl https://raw.githubusercontent.com/pmmp/php-build-scripts/master/compile
 #build php
 WORKDIR /build
 RUN chmod +x /build/compile.sh
-RUN /build/compile.sh -P ${PMMP_TAG}
+RUN /build/compile.sh -P${PMMP_TAG}
 RUN ln -s /build/bin/php7/bin/php /usr/bin/php
 
 #install composer
