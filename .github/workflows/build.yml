@@ -27,5 +27,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the hello-docker Docker image
           run: |
             docker push ghcr.io/${{ github.repository_owner }}/yolks:build_${{ matrix.tag }}
