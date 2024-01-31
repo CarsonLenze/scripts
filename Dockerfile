@@ -6,7 +6,7 @@ RUN mkdir /build
 WORKDIR /build
 RUN curl https://raw.githubusercontent.com/pmmp/php-build-scripts/master/compile.sh -o ./compile.sh
 
-RUN ./compile.sh -P5 -j ${THREADS:-$(grep -E ^processor /proc/cpuinfo | wc -l)}
+RUN ./compile.sh -P5
 RUN ln -s ./bin/php7/bin/php /usr/bin/php
 
 
