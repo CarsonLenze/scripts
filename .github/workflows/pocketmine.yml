@@ -8,7 +8,7 @@ on:
 
 jobs:
   push:
-    name: "eggs:pocketmine_v${{ matrix.tag }}"
+    name: "yolks:pocketmine_v${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -37,4 +37,4 @@ jobs:
           push: true
           build-args: PMMP_Version=${{ matrix.tag }}
           tags: |
-            ghcr.io/carsonlenze/eggs:pocketmine_v${{ matrix.tag }}
+            ghcr.io/carsonlenze/yolks:pocketmine_v${{ matrix.tag }}
