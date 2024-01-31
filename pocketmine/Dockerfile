@@ -1,5 +1,5 @@
 FROM ghcr.io/parkervcp/yolks:debian
-ARG PMMP_Version='4'
+ARG PMMP_Version='5'
 
 #update dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y curl ca-certificates build-essential m4 gzip bzip2 bison git cmake autoconf automake pkg-config libtool libtool-bin re2c
@@ -18,7 +18,7 @@ RUN ln -s /build/bin/php7/bin/php /usr/bin/php
 #install composer
 WORKDIR /build
 RUN curl -L https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/bin/composer
+# RUN mv composer.phar /usr/bin/composer
 
 #setup pterodactyl
 RUN adduser -D -h /home/container container
