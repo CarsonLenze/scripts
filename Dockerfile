@@ -8,7 +8,7 @@ RUN curl https://raw.githubusercontent.com/pmmp/php-build-scripts/master/compile
 
 RUN chmod +x ./compile.sh
 RUN ./compile.sh -P5
-RUN ln -s ./bin/php7/bin/php /usr/bin/php
+RUN ln -s ./bin/php7/bin/php /usr/local/bin/php
 
 
 RUN adduser -D -h /home/container container
