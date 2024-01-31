@@ -1,5 +1,5 @@
 FROM ghcr.io/parkervcp/yolks:debian
-ARG PMMP_Version='5'
+ARG PMMP_Version='4'
 
 #update dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y curl ca-certificates build-essential m4 gzip bzip2 bison git cmake autoconf automake pkg-config libtool libtool-bin re2c
