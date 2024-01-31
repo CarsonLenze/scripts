@@ -40,4 +40,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/${OWNER_LC}/eggs:pocketmine_v${{ matrix.tag }}
+            ghcr.io/${{ OWNER_LC }}/eggs:pocketmine_v${{ matrix.tag }}
